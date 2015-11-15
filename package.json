@@ -1,0 +1,22 @@
+{
+  "name": "node-lendingclub",
+  "version": "0.0.0",
+  "description": "A wrapper for the lending club api",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./test/all.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tjsavage/node-github"
+  },
+  "keywords": [
+    "lendingclub"
+  ],
+  "author": "Taylor Savage",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tjsavage/node-github/issues"
+  },
+  "homepage": "https://github.com/tjsavage/node-github"
+}
