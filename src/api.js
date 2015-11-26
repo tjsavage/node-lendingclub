@@ -1,4 +1,13 @@
-var strformat = require('strformat');
+var format = require('string-format');
+
+format.extend(String.prototype, {
+  emptyIfUndefined: function(s) {
+    if (typeof s == 'undefined') {
+      return '';
+    }
+    return s;
+  }
+})
 
 var API = {};
 
@@ -10,7 +19,7 @@ API._generateAPIGetter = function(urlFormatString) {
       throw new Error("Missing an investorId");
     }
 
-    var url = strformat(urlFormatString, obj);
+    var url = format(urlFormatString, obj);
 
     self._makeRequest({
       url: url,
