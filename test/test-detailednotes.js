@@ -9,7 +9,7 @@ var expect = chai.expect;
 var TEST_URL = "http://localhost";
 
 
-describe('notes', function() {
+describe('detailednotes', function() {
   var client;
 
   beforeEach(function() {
@@ -23,12 +23,12 @@ describe('notes', function() {
     });
   });
 
-  it('should return the notes', function(done) {
+  it('should return the detailed notes', function(done) {
     var scope = nock(TEST_URL)
-      .get("/accounts/1/notes")
-      .replyWithFile(200, __dirname + '/responses/notes.json');
+      .get("/accounts/1/detailednotes")
+      .replyWithFile(200, __dirname + '/responses/detailednotes.json');
 
-    client.notes({
+    client.detailednotes({
       investorId: "1"
     }, function(err, response) {
       expect(err).to.be.null;
