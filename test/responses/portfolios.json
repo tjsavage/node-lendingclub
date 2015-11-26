@@ -1,0 +1,12 @@
+{
+	"myPortfolios":[
+	{
+		"portfolioId":11111,
+		"portfolioName":"Portfolio1",
+		"portfolioDescription":"Sample Portfolio Description"},
+	{
+		"portfolioId":22222,
+		"portfolioName":"Portfolio2",
+		"portfolioDescription":null
+	}]
+}

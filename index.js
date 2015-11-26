@@ -3,7 +3,8 @@ var Requests = require('./src/requests');
 var Summary = require('./src/summary');
 var AvailableCash = require('./src/availablecash');
 var Notes = require('./src/notes');
-var DetailedNotes = require('./src/detailednotes')
+var DetailedNotes = require('./src/detailednotes');
+var Portfolios = require('./src/portfolios');
 
 function extendPrototype(constructor, mix) {
   for(var i in mix) {
@@ -40,5 +41,6 @@ extendPrototype(Client, Summary);
 extendPrototype(Client, AvailableCash);
 extendPrototype(Client, Notes);
 extendPrototype(Client, DetailedNotes);
+extendPrototype(Client, Portfolios);
 
 module.exports = Client;
