@@ -43,25 +43,26 @@ describe('requests', function() {
       });
 
       it('should make a get request with the right headers', function(done) {
-        nock(TEST_URL)
+        var scope = nock(TEST_URL)
           .get('/test')
           .matchHeader('Authorization', 'KEY')
           .reply(200);
 
         client._makeRequest('/test', 'GET', function(err, res) {
           expect(err).to.be.null;
-          expect(nock.isDone()).to.be.true;
+          expect(scope.isDone()).to.be.true;
           done();
         });
       });
 
       it('should parse the JSON response to an object', function(done) {
-        nock(TEST_URL)
+        var scope = nock(TEST_URL)
           .get('/test')
           .replyWithFile(200, __dirname + '/responses/summary.json');
 
         client._makeRequest('/test', 'GET', function(err, res) {
           expect(err).to.be.null;
+          expect(scope.isDone()).to.be.true;
           expect(res.availableCash).to.equal(2077.21);
           done();
         });

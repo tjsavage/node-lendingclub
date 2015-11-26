@@ -20,8 +20,9 @@
   },
   "homepage": "https://github.com/tjsavage/node-github",
   "dependencies": {
-    "mocha": "^2.3.4",
     "chai": "^3.4.1",
+    "mocha": "^2.3.4",
+    "nock": "^3.3.2",
     "request": "^2.65.0"
   }
 }

@@ -1,6 +1,7 @@
 var Authenticate = require('./src/authenticate');
 var Requests = require('./src/requests');
 var Summary = require('./src/summary');
+var AvailableCash = require('./src/availablecash');
 
 function extendPrototype(constructor, mix) {
   for(var i in mix) {
@@ -34,5 +35,6 @@ var Client = function Client(settings) {
 extendPrototype(Client, Authenticate);
 extendPrototype(Client, Requests);
 extendPrototype(Client, Summary);
+extendPrototype(Client, AvailableCash);
 
 module.exports = Client;
