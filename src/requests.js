@@ -5,11 +5,23 @@ var Requests = {};
 /**
 * Makes an authenticated request to "this.settings.baseUrl + url"
 *
+* @param options Object of options, which must include method and url, and optionally body
 * @param cb Callback expecting parameters function(err, data)
 */
-Requests._makeRequest = function(url, method, cb) {
+Requests._makeRequest = function(options, cb) {
+  if (typeof options == 'undefined') {
+    throw new Error("Must include an options object for the response");
+  }
+
+  var method = options.method;
+  var url = options.url;
+
   if (!method || (method != "POST" && method != "GET")) {
     throw new Error("Invalid request method: ", method);
+  }
+
+  if (!url) {
+    throw new Error("Invalid URL");
   }
 
   if (!this._auth || !this._auth.key) {
@@ -26,18 +38,19 @@ Requests._makeRequest = function(url, method, cb) {
     headers['Content-type'] = "application/json"
   }
 
-  request({
+  var requestOptions = {
+    json: true,
     method: method,
     uri: this.settings.baseUrl + url,
     headers: headers
-  }, function(error, response, body) {
-    var responseObj;
-    
-    if(body != null && body.length > 0) {
-      var responseObj = JSON.parse(body);
-    }
+  };
 
-    cb(error, responseObj);
+  if (method == "POST") {
+    requestOptions.body = options.body;
+  }
+
+  request(requestOptions, function(error, response, body) {
+    cb(error, body);
   })
 }
 

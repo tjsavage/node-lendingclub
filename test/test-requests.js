@@ -22,7 +22,10 @@ describe('requests', function() {
 
       it('should throw an error', function() {
         expect(function() {
-          client._makeRequest('/test', 'GET');
+          client._makeRequest({
+            url: '/test',
+            method: 'GET'
+          });
         }).to.throw(/authenticate/);
 
       })
@@ -48,7 +51,10 @@ describe('requests', function() {
           .matchHeader('Authorization', 'KEY')
           .reply(200);
 
-        client._makeRequest('/test', 'GET', function(err, res) {
+        client._makeRequest({
+          url: '/test',
+          method: 'GET'
+        }, function(err, res) {
           expect(err).to.be.null;
           expect(scope.isDone()).to.be.true;
           done();
@@ -60,7 +66,10 @@ describe('requests', function() {
           .get('/test')
           .replyWithFile(200, __dirname + '/responses/summary.json');
 
-        client._makeRequest('/test', 'GET', function(err, res) {
+        client._makeRequest({
+          url: '/test',
+          method: 'GET'
+        }, function(err, res) {
           expect(err).to.be.null;
           expect(scope.isDone()).to.be.true;
           expect(res.availableCash).to.equal(2077.21);

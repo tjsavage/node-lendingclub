@@ -1,3 +1,4 @@
+var API = require('./src/api');
 var Authenticate = require('./src/authenticate');
 var Requests = require('./src/requests');
 var Summary = require('./src/summary');
@@ -35,6 +36,7 @@ var Client = function Client(settings) {
   extendObject(this.settings, settings);
 }
 
+extendPrototype(Client, API);
 extendPrototype(Client, Authenticate);
 extendPrototype(Client, Requests);
 extendPrototype(Client, Summary);
