@@ -6,6 +6,7 @@ var AvailableCash = require('./src/availablecash');
 var Notes = require('./src/notes');
 var DetailedNotes = require('./src/detailednotes');
 var Portfolios = require('./src/portfolios');
+var Orders = require('./src/orders');
 
 function extendPrototype(constructor, mix) {
   for(var i in mix) {
@@ -44,5 +45,6 @@ extendPrototype(Client, AvailableCash);
 extendPrototype(Client, Notes);
 extendPrototype(Client, DetailedNotes);
 extendPrototype(Client, Portfolios);
+extendPrototype(Client, Orders);
 
 module.exports = Client;

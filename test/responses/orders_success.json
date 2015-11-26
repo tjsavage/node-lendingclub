@@ -1,0 +1,32 @@
+{
+	"orderInstructId":55555,
+	"orderConfirmations": [
+	{
+		"loanId":22222,
+		"requestedAmount":55.0,
+		"investedAmount":50.0,
+		"executionStatus":
+			[
+			"REQUESTED_AMOUNT_ROUNDED",
+			"ORDER_FULFILLED"
+			]
+	},
+	{
+		"loanId":33333,
+		"requestedAmount":25.0,
+		"investedAmount":25.0,
+		"executionStatus":
+			[
+			"ORDER_FULFILLED"
+			]
+	},
+	{
+		"loanId":44444,
+		"requestedAmount":25.0,
+		"investedAmount":0,
+		"executionStatus":
+			[
+			"NOT_AN_INFUNDING_LOAN"
+			]
+	}]
+}
