@@ -102,6 +102,16 @@ describe('portfolios', function() {
       }).to.throw(/portfolioName/);
     });
 
+    it('should throw if passed an aid that is not a number', function() {
+      expect(function() {
+        client.createPortfolio({
+          investorId: "1",
+          aid: "1",
+          portfolioName: "abc"
+        });
+      }).to.throw(/aid/);
+    });
+
     it('should not throw if missing a portfolioDescription', function(done) {
       var scope = nock(TEST_URL)
         .post("/accounts/1/portfolios", {

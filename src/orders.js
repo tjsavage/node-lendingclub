@@ -41,7 +41,6 @@ Orders.submitOrders = function(obj, cb) {
 
 Orders._validateOrderObj = function(obj) {
   if (typeof obj.loanId == 'undefined') {
-    console.log(obj);
     throw new Error("No loanId in order");
   }
 

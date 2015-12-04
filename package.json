@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/tjsavage/node-github"
+    "url": "git://github.com/tjsavage/node-lendingclub"
   },
   "keywords": [
     "lendingclub"
@@ -16,9 +16,9 @@
   "author": "Taylor Savage",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tjsavage/node-github/issues"
+    "url": "https://github.com/tjsavage/node-lendingclub/issues"
   },
-  "homepage": "https://github.com/tjsavage/node-github",
+  "homepage": "https://github.com/tjsavage/node-lendingclub",
   "dependencies": {
     "chai": "^3.4.1",
     "mocha": "^2.3.4",

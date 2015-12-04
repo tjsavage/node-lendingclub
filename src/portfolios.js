@@ -23,6 +23,10 @@ Portfolios.createPortfolio = function(obj, cb) {
     throw new Error("Missing aid");
   }
 
+  if (typeof aid != 'number') {
+    throw new Error("aid not a number");
+  }
+
   this._makeRequest({
     url: url,
     method: "POST",
